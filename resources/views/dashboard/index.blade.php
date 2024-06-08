@@ -11,6 +11,10 @@
                         <h3>{{ $wallet->amount }}</h3>
                         <p>{{ $wallet->title }}</p>
                     </div>
+                    <a class="btn btn-default bg-success w-100"
+                        href="{{ route('transactions.deposit', ['user' => auth()->user(), 'wallet' => $wallet->id]) }}">Deposit</a>
+                    <a class="btn btn-default bg-danger w-100"
+                        href="{{ route('transactions.withdraw', ['user' => auth()->user(), 'wallet' => $wallet->id]) }}">Withdraw</a>
                 </div>
             </div>
         @endforeach

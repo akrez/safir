@@ -1,6 +1,6 @@
 @extends('dashboard')
 
-@section('title', 'برداشت' . $wallet->title)
+@section('title', 'برداشت ' . $wallet->title)
 
 @section('content')
     @include('transaction._form', [
