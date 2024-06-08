@@ -1,4 +1,4 @@
-@extends('app')
+@extends('auth')
 
 @section('title', __('Verify Your Email Address'))
 
