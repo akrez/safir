@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WalletController;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Auth;
@@ -36,4 +37,6 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
         Route::get('wallets/{wallet}/transactions', [TransactionController::class, 'index'])->name('transactions.index');
         Route::post('wallets/{wallet}/transactions', [TransactionController::class, 'store'])->name('transactions.store');
     });
+
+    Route::get('users', [UserController::class, 'index'])->name('users.index');
 });

@@ -1,6 +1,6 @@
 @extends('dashboard')
 
-@section('title', 'لیست کیف پول های من')
+@section('title', 'لیست کیف پول های ' . $user->name)
 
 @section('content')
     <div class="row">

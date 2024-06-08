@@ -16,7 +16,7 @@ class WalletController extends Controller
     {
         return view('wallet.index', [
             'user' => $user,
-            'wallets' => auth()->user()->wallets()->orderBy('updated_at', 'DESC')->paginate(50),
+            'wallets' => $user->wallets()->orderBy('updated_at', 'DESC')->paginate(50),
         ]);
     }
 
@@ -35,7 +35,7 @@ class WalletController extends Controller
      */
     public function store(StoreWalletRequest $request, User $user)
     {
-        auth()->user()->wallets()->create($request->validated());
+        $user->wallets()->create($request->validated());
 
         return redirect()->route('wallets.index', [
             'user' => $user,

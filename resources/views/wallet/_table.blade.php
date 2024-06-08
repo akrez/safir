@@ -25,13 +25,13 @@
                 <td>{{ $wallet->updated_at }}</td>
                 <td>
                     <a class="btn btn-default"
-                        href="{{ route('wallets.edit', ['user' => auth()->user(), 'wallet' => $wallet->id]) }}">Edit</a>
+                        href="{{ route('wallets.edit', ['user' => $user, 'wallet' => $wallet->id]) }}">Edit</a>
                     <a class="btn btn-default"
-                        href="{{ route('transactions.deposit', ['user' => auth()->user(), 'wallet' => $wallet->id]) }}">Deposit</a>
+                        href="{{ route('transactions.deposit', ['user' => $user, 'wallet' => $wallet->id]) }}">Deposit</a>
                     <a class="btn btn-default"
-                        href="{{ route('transactions.withdraw', ['user' => auth()->user(), 'wallet' => $wallet->id]) }}">Withdraw</a>
+                        href="{{ route('transactions.withdraw', ['user' => $user, 'wallet' => $wallet->id]) }}">Withdraw</a>
                     <a class="btn btn-default"
-                        href="{{ route('transactions.index', ['user' => auth()->user(), 'wallet' => $wallet->id]) }}">Transactions</a>
+                        href="{{ route('transactions.index', ['user' => $user, 'wallet' => $wallet->id]) }}">Transactions</a>
                 </td>
             </tr>
         @empty
