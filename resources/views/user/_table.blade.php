@@ -3,6 +3,7 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Wallets Count</th>
             <th></th>
         </tr>
     </thead>
@@ -11,6 +12,7 @@
             <tr>
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
+                <td>{{ $user->wallets_count }}</td>
                 <td>
                     <a class="btn btn-default" href="{{ route('wallets.index', ['user' => $user]) }}">Show</a>
                 </td>

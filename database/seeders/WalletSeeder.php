@@ -15,9 +15,8 @@ class WalletSeeder extends Seeder
     public function run(): void
     {
         Wallet::factory()
-            ->count(3)
+            ->count(2)
             ->sequence(
-                ['title' => 'ریال ایران'],
                 ['title' => 'دلار آمریکا'],
                 ['title' => 'یورو اروپا'],
             )
@@ -27,11 +26,9 @@ class WalletSeeder extends Seeder
             ]);
 
         Wallet::factory()
-            ->count(3)
+            ->count(1)
             ->sequence(
                 ['title' => 'ریال ایران'],
-                ['title' => 'دلار آمریکا'],
-                ['title' => 'یورو اروپا'],
             )
             ->create([
                 'status' => StatusEnum::ACTIVE,

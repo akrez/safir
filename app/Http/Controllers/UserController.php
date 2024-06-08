@@ -14,7 +14,7 @@ class UserController extends Controller
     public function index()
     {
         return view('user.index', [
-            'users' => User::orderBy('id', 'DESC')->paginate(50),
+            'users' => User::withCount('wallets')->orderBy('id', 'DESC')->paginate(50),
         ]);
     }
 }
