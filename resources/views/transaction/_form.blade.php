@@ -23,11 +23,11 @@
     <div class="form-group">
         <label for="transactioned_at">Transactioned At</label>
         <div class="input-group date" id="transactioned_at" data-target-input="nearest">
-            <input name="transactioned_at" type="text" class="form-control datetimepicker-input" data-target="#transactioned_at"
-                value="{{ @old('transactioned_at', isset($transaction) ? $transaction->transactioned_at : '') }}">
-            <div class="input-group-append" data-target="#transactioned_at" data-toggle="datetimepicker">
+            <div class="input-group-prepend" data-target="#transactioned_at" data-toggle="datetimepicker">
                 <div class="input-group-text"><i class="fa fa-calendar"></i></div>
             </div>
+            <input name="transactioned_at" type="text" class="form-control datetimepicker-input" data-target="#transactioned_at"
+                value="{{ @old('transactioned_at', isset($transaction) ? $transaction->transactioned_at : '') }}">
         </div>
     </div>
 
