@@ -20,6 +20,7 @@ return new class extends Migration
                 TypeEnum::WITHDRAW->value,
                 TypeEnum::DEPOSIT->value,
             ]);
+            $table->timestamp('transactioned_at');
             $table->foreignId('wallet_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });

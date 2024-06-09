@@ -16,10 +16,12 @@ class Transaction extends Model
         'title',
         'amount',
         'type',
+        'transactioned_at',
     ];
 
     protected $casts = [
         'type' => TypeEnum::class,
+        'transactioned_at' => 'datetime',
     ];
 
     protected static function booted(): void

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-buttons/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet"
+        href="{{ asset('plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -187,6 +189,9 @@
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.print.min.js') }}"></script>
     <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
 
+    <script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
+    <script src="{{ asset('plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+
     <script>
         $(document).ready(function() {
             $('table').DataTable({
@@ -197,6 +202,12 @@
                 "searching": false,
                 "ordering": true,
                 "info": false,
+            });
+            $('#transactioned_at').datetimepicker({
+                format: 'YYYY-MM-DD HH:mm:ss',
+                icons: {
+                    time: 'far fa-clock'
+                }
             });
         });
     </script>

@@ -28,7 +28,7 @@ class UpdateWalletAmount implements ShouldQueue
     {
         $wallet = $this->transaction->wallet;
         $wallet->amount = $wallet->transactions()->sum('amount');
-        $wallet->transactioned_at = now();
+        $wallet->transactioned_at = $wallet->transactions()->max('transactioned_at');
         $wallet->update();
     }
 }

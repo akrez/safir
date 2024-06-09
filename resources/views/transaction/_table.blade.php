@@ -5,6 +5,7 @@
             <th>Title</th>
             <th>Amount</th>
             <th>Type</th>
+            <th>Transactioned At</th>
             <th>Created At</th>
             <th>Updated At</th>
         </tr>
@@ -16,6 +17,7 @@
                 <td>{{ $transaction->title }}</td>
                 <td>{{ $transaction->amount }}</td>
                 <td>{{ $transaction->type }}</td>
+                <td>{{ $transaction->transactioned_at }}</td>
                 <td>{{ $transaction->created_at }}</td>
                 <td>{{ $transaction->updated_at }}</td>
             </tr>

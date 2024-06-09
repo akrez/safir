@@ -27,6 +27,7 @@ class StoreTransactionRequest extends FormRequest
             'title' => ['required', 'string', 'max:196'],
             'type' => ['required', Rule::in(TypeEnum::values())],
             'amount' => ['required', 'numeric', 'min:0'],
+            'transactioned_at' => ['required', 'date_format:Y-m-d H:i:s'],
         ];
     }
 }

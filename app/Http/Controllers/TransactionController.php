@@ -6,6 +6,7 @@ use App\Enums\Transaction\TypeEnum;
 use App\Http\Requests\StoreTransactionRequest;
 use App\Models\User;
 use App\Models\Wallet;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class TransactionController extends Controller
@@ -61,6 +62,7 @@ class TransactionController extends Controller
     {
         $data = $request->validated();
         $data['amount'] = ($request->amount * ($request->type === TypeEnum::DEPOSIT->value ? +1 : -1));
+        $data['transactioned_at'] = Carbon::createFromFormat('Y-m-d H:i:s', $request->transactioned_at);
 
         $wallet->transactions()->create($data);
 
