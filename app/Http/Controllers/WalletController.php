@@ -45,20 +45,20 @@ class WalletController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user, Wallet $wallet)
+    public function edit(User $user, int $wallet)
     {
         return view('wallet.edit', [
             'user' => $user,
-            'wallet' => $wallet,
+            'wallet' => $user->wallets()->whereId($wallet)->firstOrFail(),
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateWalletRequest $request, User $user, Wallet $wallet)
+    public function update(UpdateWalletRequest $request, User $user, int $wallet)
     {
-        $wallet->update($request->validated());
+        $user->wallets()->whereId($wallet)->firstOrFail()->update($request->validated());
 
         return redirect()->route('wallets.index', ['user' => $user]);
     }

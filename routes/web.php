@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\PermissionsEnum;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TransactionController;
@@ -38,5 +39,7 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
         Route::post('wallets/{wallet}/transactions', [TransactionController::class, 'store'])->name('transactions.store');
     });
 
-    Route::get('users', [UserController::class, 'index'])->name('users.index');
+    Route::group(['middleware' => ['can:'.PermissionsEnum::USERS_INDEX->value]], function () {
+        Route::get('users', [UserController::class, 'index'])->name('users.index');
+    });
 });
